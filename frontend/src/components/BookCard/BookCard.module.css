@@ -1,0 +1,110 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15.5rem;
+  height: 18rem;
+  margin: 0 auto;
+  padding: 0.6rem;
+  background: var(--surface-3);
+  color: var(--text);
+  border: 1px solid var(--glass-1);
+  border-radius: 1.125rem;
+  box-shadow: 0 10px 30px var(--shadow-md);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 40px var(--shadow-lg),
+    0 0 0 2px var(--accent-ring-soft);
+  border-color: var(--accent-border);
+}
+
+.card .img {
+  width: 7.5rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -3rem;
+  margin-bottom: 1rem;
+  background: var(--image-placeholder-bg);
+  border-radius: 0.625rem;
+}
+
+.card .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.625rem;
+}
+
+.placeholderIcon {
+  font-size: 2.2rem;
+  color: var(--placeholder-icon);
+}
+
+.info {
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.25rem;
+  line-height: 1.3rem;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.9rem;
+}
+
+.options {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 10rem;
+}
+
+.options button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.options button:hover svg {
+  transform: scale(1.1);
+  opacity: 0.95;
+}
+
+.options svg {
+  color: var(--accent);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.deleteBtn:hover svg {
+  color: var(--danger);
+}
+
+.finished svg {
+  font-size: 1.3rem;
+  color: var(--success);
+  cursor: default;
+}

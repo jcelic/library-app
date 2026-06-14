@@ -1,0 +1,177 @@
+.shelfForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: min(28.75rem, 92vw);
+  margin: 0 auto;
+  padding: 1rem;
+  background: var(--surface-3);
+  border: 1px solid var(--glass-2);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 28px var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+.shelfFormHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--glass-2);
+}
+
+.shelfFormHeader h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+}
+
+.closeBtn {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.55rem;
+  background: var(--surface-2);
+  color: var(--accent);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.closeBtn:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.formInput label {
+  font-size: 0.82rem;
+  opacity: 0.9;
+  letter-spacing: 0.03em;
+}
+
+.formInput input {
+  width: 100%;
+  margin-bottom: 0.1rem;
+  padding: 0.52rem 0.8rem;
+  border: 1px solid var(--glass-3);
+  border-radius: 0.5rem;
+  background: var(--overlay-sm);
+  color: inherit;
+  font-size: 0.92rem;
+  outline: none;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.formInput input::placeholder {
+  opacity: 0.6;
+}
+
+.formInput input:focus {
+  background: var(--overlay-md);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+.formBtns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 0.1rem;
+}
+
+.formBtns button {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--glass-3);
+  border-radius: 0.5rem;
+  background: var(--glass-2);
+  color: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    border-color 120ms ease,
+    opacity 120ms ease,
+    transform 120ms ease;
+}
+
+.formBtns button:hover {
+  border-color: var(--glass-4);
+  background: var(--glass-2-hover);
+}
+
+.formBtns button:active {
+  transform: translateY(0);
+}
+
+.formBtns button[type='submit'] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #111;
+}
+
+.formBtns button[type='submit']:hover {
+  background: var(--accent-hover);
+}
+
+.formBtns button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 520px) {
+  .shelfForm {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 1rem;
+  }
+
+  .shelfFormHeader {
+    margin-bottom: 0.45rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .shelfFormHeader h2 {
+    font-size: 1.05rem;
+  }
+
+  .shelfFormClose {
+    width: 2.125rem;
+    height: 2.125rem;
+  }
+
+  .formInput label {
+    font-size: 0.78rem;
+  }
+
+  .formInput input {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.88rem;
+  }
+
+  .formBtns {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+
+  .formBtns button {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+  }
+}

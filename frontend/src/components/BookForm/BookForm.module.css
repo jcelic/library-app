@@ -1,0 +1,317 @@
+.bookForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: min(28.75rem, 92vw);
+  padding: 1rem;
+  margin: 0 auto;
+  background: var(--surface-3);
+  border: 1px solid var(--glass-2);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 28px var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+.bookFormHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
+  border-bottom: 1px solid var(--glass-2);
+}
+
+.bookFormHeader h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+}
+
+.closeBtn {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.55rem;
+  background: var(--surface-2);
+  color: var(--accent);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.closeBtn:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.formInput label {
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  opacity: 0.9;
+}
+
+.formInput input {
+  width: 100%;
+  padding: 0.52rem 0.8rem;
+  margin-bottom: 0.1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--glass-3);
+  background: var(--overlay-sm);
+  color: inherit;
+  font-size: 0.92rem;
+  outline: none;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.formInput input::placeholder {
+  opacity: 0.6;
+}
+
+.formInput input:focus {
+  background: var(--overlay-md);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+.error {
+  display: block;
+  min-height: 0.9rem;
+  color: var(--danger-soft);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.radios {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.radio {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--glass-3);
+  background: var(--overlay-sm);
+  font-size: 0.92rem;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+}
+
+.radio:hover .pill {
+  border-color: var(--glass-4);
+  box-shadow: 0 0 0 2px var(--glass-2);
+}
+
+.radio input:checked + .pill {
+  background: var(--glass-2);
+  border-color: var(--accent-border-strong);
+  box-shadow: 0 0 0 2px var(--accent-ring);
+}
+
+.formBtns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 0.1rem;
+}
+
+.formBtns button {
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--glass-3);
+  background: var(--glass-2);
+  color: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    border-color 120ms ease,
+    opacity 120ms ease,
+    transform 120ms ease;
+}
+
+.formBtns button:hover {
+  border-color: var(--glass-4);
+  background: var(--glass-2-hover);
+}
+
+.formBtns button:active {
+  transform: translateY(0);
+}
+
+.formBtns button[type='submit'] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #111;
+}
+
+.formBtns button[type='submit']:hover {
+  background: var(--accent-hover);
+}
+
+.formBtns button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.discardView {
+  width: 100%;
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.discardView h2 {
+  margin: 0 0 0.5rem;
+  color: var(--text);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.discardView p {
+  max-width: 24rem;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.discardActions {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.keepBtn,
+.discardBtn {
+  padding: 0.75rem 1.15rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.keepBtn:hover,
+.discardBtn:hover {
+  transform: translateY(-1px);
+}
+
+.keepBtn {
+  background: var(--glass-2);
+  color: var(--text);
+}
+
+.discardBtn {
+  background: var(--danger);
+  color: var(--white);
+}
+
+@media (max-width: 520px) {
+  .bookForm {
+    width: 100%;
+    max-height: calc(100vh - 1.5rem);
+    overflow-y: auto;
+    gap: 0.65rem;
+    padding: 0.9rem;
+    border-radius: 1rem;
+  }
+
+  .bookFormHeader {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .bookFormHeader h2 {
+    font-size: 1.05rem;
+  }
+
+  .bookFormClose {
+    width: 2.125rem;
+    height: 2.125rem;
+  }
+
+  .formInput label {
+    font-size: 0.78rem;
+  }
+
+  .formInput input {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.88rem;
+  }
+
+  .radios {
+    gap: 0.45rem;
+  }
+
+  .pill {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .formBtns {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+
+  .formBtns button {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+  }
+
+  .discardView {
+    min-height: 14rem;
+  }
+
+  .discardActions {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .keepBtn,
+  .discardBtn {
+    width: 100%;
+  }
+}

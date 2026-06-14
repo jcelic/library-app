@@ -1,0 +1,192 @@
+.searchBox {
+  position: relative;
+  width: clamp(16rem, 30vw, 27rem);
+}
+
+.searchWrapper {
+  width: 100%;
+  height: 2.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0 0.9rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  transition: border-color 0.2s ease;
+}
+
+.searchWrapper:hover,
+.searchWrapper:focus-within {
+  border-color: var(--accent);
+}
+
+.icon {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.clearBtn {
+  width: 1.65rem;
+  height: 1.65rem;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease,
+    transform 140ms ease;
+}
+
+.clearBtn:hover {
+  background: var(--glass-1);
+  color: var(--accent);
+}
+
+.clearBtn:active {
+  transform: scale(0.94);
+}
+
+.clearBtn svg {
+  display: block;
+  font-size: 1rem;
+}
+
+.results {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 0;
+  width: 100%;
+  max-height: 22rem;
+  overflow-y: auto;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  box-shadow: 0 1rem 2.5rem var(--shadow-lg);
+  z-index: 1000;
+}
+
+.result {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.result:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+.result:hover {
+  background: var(--glass-1);
+}
+
+.info {
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.metaType {
+  color: var(--accent);
+}
+
+.empty {
+  padding: 1rem;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Modal variant */
+
+.modal {
+  width: min(36rem, 100%);
+  position: relative;
+}
+
+.modal .searchWrapper {
+  height: 3rem;
+}
+
+.modal .results {
+  position: static;
+  margin-top: 0.75rem;
+  width: 100%;
+  max-height: 55vh;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.55rem;
+  background: var(--surface-2);
+  color: var(--accent);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.closeBtn:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.closeBtn svg {
+  display: block;
+  font-size: 1.35rem;
+}

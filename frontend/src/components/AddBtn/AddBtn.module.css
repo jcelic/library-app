@@ -1,0 +1,49 @@
+.addBtn {
+  height: 2.25rem;
+  padding: 0 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--accent-btn);
+  color: #111;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.addBtn svg {
+  font-size: 1.15rem;
+}
+
+.addBtn:hover {
+  filter: brightness(1.06);
+}
+
+.addBtn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 520px) {
+  .addBtn {
+    height: 2rem;
+    padding: 0 0.6rem;
+    font-size: 0.9rem;
+    gap: 0.4rem;
+  }
+
+  .addBtn svg {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .addBtn {
+    padding: 0 0.5rem;
+    font-size: 0.82rem;
+  }
+}

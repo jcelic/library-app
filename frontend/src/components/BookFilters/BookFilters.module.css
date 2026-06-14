@@ -1,0 +1,410 @@
+.filtersWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.iconBtn {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.iconBtn:hover {
+  background: var(--glass-2);
+}
+
+.iconBtn svg {
+  display: block;
+  font-size: 1.45rem;
+}
+
+.iconBtnActive {
+  background: var(--accent-surface);
+}
+
+.filterBadge {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.35rem;
+  min-width: 1.05rem;
+  height: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.25rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #111;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.filtersDropdown {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  width: 21rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent),
+    var(--surface-2);
+  box-shadow: 0 1.25rem 3rem var(--shadow-dropdown);
+  z-index: 1200;
+  animation: filtersDropdownEnter 150ms ease-out;
+  transform-origin: top right;
+}
+
+.filtersDropdown::before {
+  content: '';
+  position: absolute;
+  top: -0.45rem;
+  right: 0.8rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+  transform: rotate(45deg);
+}
+
+.dropdownHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dropdownHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.closeBtn {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.55rem;
+  background: var(--surface-2);
+  color: var(--accent);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.closeBtn:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.dropdownTitle {
+  margin: 0;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.dropdownSubtitle {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.resetBtn {
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.resetBtn:hover {
+  text-decoration: underline;
+}
+
+.filterGroup {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.filterGroup + .filterGroup {
+  margin-top: 1.25rem;
+}
+
+.groupTitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.optionList {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.optionBtn {
+  width: 100%;
+  min-height: 2.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.7rem;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.optionBtn:hover {
+  background: var(--hover-surface);
+}
+
+.optionBtnActive {
+  border-color: var(--accent-border-soft);
+  background: var(--accent-surface);
+  color: var(--accent);
+  color: var(--filter-item-color);
+}
+
+.optionBtn svg {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.divider {
+  height: 1px;
+  margin: 0.9rem 0;
+  background: var(--border);
+}
+
+.toggleOption {
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface-subtle);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.toggleOption:hover,
+.toggleOptionActive {
+  border-color: var(--accent-border-soft);
+  background: var(--accent-surface-hover);
+}
+
+.checkbox {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  color: #111;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.toggleOptionActive .checkbox {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.checkbox svg {
+  font-size: 0.8rem;
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.45rem;
+}
+
+.statusBtn {
+  min-height: 2.25rem;
+  padding: 0 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  background: var(--surface-subtle);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.statusBtn:hover {
+  color: var(--text);
+  background: var(--hover-surface);
+}
+
+.statusBtnActive {
+  border-color: var(--accent-border-medium);
+  background: var(--accent-surface);
+  color: var(--filter-item-color);
+}
+
+@media (max-width: 850px) {
+  .filtersDropdown {
+    display: none;
+  }
+}
+
+.filtersModal {
+  width: min(100%, 26rem);
+  max-height: min(90vh, 47rem);
+  overflow-y: auto;
+
+  display: grid;
+  gap: 1rem;
+
+  padding: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent),
+    var(--surface-2);
+  box-shadow: 0 1.5rem 4rem var(--shadow-modal);
+}
+
+.applyFiltersBtn {
+  min-height: 2.8rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 0.85rem;
+  background: var(--accent);
+  color: #111;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.applyFiltersBtn:hover {
+  filter: brightness(1.05);
+}
+
+@media (max-width: 850px) {
+  .filtersModal {
+    width: min(100vw - 1.5rem, 28rem);
+    max-height: min(88vh, 38rem);
+    gap: 0.65rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+  }
+
+  .filtersModal .dropdownHeader {
+    margin-bottom: 0.25rem;
+  }
+
+  .filtersModal .dropdownSubtitle {
+    display: none;
+  }
+
+  .filtersModal .groupTitle {
+    font-size: 0.68rem;
+  }
+
+  .filtersModal .filterGroup {
+    gap: 0.35rem;
+  }
+
+  .filtersModal .filterGroup + .filterGroup {
+    margin-top: 0.55rem;
+  }
+
+  .filtersModal .optionList {
+    gap: 0.05rem;
+  }
+
+  .filtersModal .optionBtn {
+    min-height: 1.9rem;
+    padding: 0 0.6rem;
+    font-size: 0.82rem;
+    border-radius: 0.55rem;
+  }
+
+  .filtersModal .divider {
+    margin: 0.35rem 0;
+  }
+
+  .filtersModal .toggleOption {
+    min-height: 2rem;
+    padding: 0 0.6rem;
+    font-size: 0.82rem;
+  }
+
+  .filtersModal .statusGrid {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .filtersModal .statusBtn {
+    min-height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .applyFiltersBtn {
+    min-height: 2.3rem;
+    margin-top: 0.15rem;
+    font-size: 0.88rem;
+  }
+}
+
+@keyframes filtersDropdownEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
